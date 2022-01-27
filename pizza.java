@@ -4,7 +4,7 @@ import java.util.*;
 import Hashcode.Customer;
 
 import java.io.*;
-
+import Hashcode.Writer;
 
 
 public class pizza{
@@ -20,16 +20,20 @@ public class pizza{
             HashMap<String,Integer>likes=new HashMap<>();
             HashMap<String,Integer>dislikes=new HashMap<>();
             Reader reader=new Reader();
+            Writer w=new Writer();
             Score score=new Score();
-            List<Customer>cus=reader.getinput("a_an_example.in.txt");
+            List<Customer>cus=reader.getinput("e_elaborate.in.txt");
             List<String>chook=new ArrayList<>();
-            chook.add("cheese");
-            chook.add("mushrooms");
-            chook.add("tomatoes");
-            chook.add("peppers");
+            for(Map.Entry<String,Integer>map:reader.likesones.entrySet()){
+                chook.add(map.getKey());
+
+            }
+
+
             System.out.println(score.calculate(cus,chook));
             System.out.println(reader.likesones);
             System.out.println(reader.dislikedones);
+            w.writeIntoFile(chook,"e.txt");
             
             
             
