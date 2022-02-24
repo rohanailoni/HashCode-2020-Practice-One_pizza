@@ -16,8 +16,14 @@ public class Main {
     public static void main(String args[]) throws FileNotFoundException,IOException{
         Reader read=new Reader();
         Writer write=new Writer();
-        //String[] filenames={};
-        Data d=read.readinput("Input/a_an_example.in.txt");
+        //String[] filenames={"c_collaboration.in.txt","e_exceptional_skills.in.txt","b_better_start_small.in.txt","d_dense_schedule.in.txt","f_find_great_mentors.in.txt"};
+        String[] filenames={"f_find_great_mentors.in.txt"};
+        for(String file:filenames){
+            Data d=read.readinput("Input/"+file);
+            write.writeIntoFile(d,file.substring(0,1));
+
+        }
+        
         // for(Contrib c:d.co){
         //     System.out.println(c.name);
         //     for(Skill s:c.skills){
@@ -31,6 +37,7 @@ public class Main {
 
         //     }
         // }
+        
 
         
     }
